@@ -1,0 +1,29 @@
+public class Area {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Good Day");
+		
+		// TODO Auto-generated method stub
+     int x =20;
+     int y =50;
+     final double PI=3.1415926;
+     //PI=3.1415926
+
+     /*PT=3.1415926
+      * 
+      */
+
+     int a=55;
+     byte b=(byte)a;
+     System.out.println(+b);
+   
+     double r,area;
+     r=10.8;
+     area=PI*r*r;
+     System.out.println("Area of circle is:" +area);
+     
+
+	}
+
+}
