@@ -1,0 +1,21 @@
+public class IfOnly {
+	
+    public static void main(String[] args) {
+        // 宣告一個 income 變數，表示收入
+        int income = 1100000;
+
+        // 如果收入大於等於 1000000，則印出 "去澳洲看無尾熊"
+        if (income >= 1000000)
+        {
+            System.out.println("去澳洲看無尾熊");
+            
+        // 如果收入介於 500000 到 1000000 之間，則印出 "去中國看熊貓"
+        if (income >= 500000 && income <= 1000000)
+            System.out.println("去中國看熊貓");
+
+        // 如果收入小於 500000，則印出 "去公園看黃金獵犬"
+        if (income < 500000)
+            System.out.println("去公園看黃金獵犬");
+        }
+    }
+ }
