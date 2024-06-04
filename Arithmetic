@@ -1,0 +1,52 @@
+public class Arithmetic {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a=5,b=2;
+		int sum1,sum2;
+		System.out.println(a/b);
+		System.out.println(a%b);
+		sum1=++a;
+		sum2=b++;	
+		System.out.println("sum1 value is : "+sum1);
+		
+		System.out.println("sum2 value is : "+sum2);
+		System.out.println("b value is : "+b);
+		
+		int x = 3;
+		System.out.println("Before Prefix X = " + ++x);
+		System.out.println("After Prefix X = " +x);
+		
+		x = 3;
+		System.out.println("Before Postfix X = " + x++);
+		System.out.println("After Postfix X = " +x);
+	
+		x=5;
+		int y=10;
+		
+		x+=y;
+		System.out.println("x+=y = " +x);
+		x-=y;
+		System.out.println("x-=y = " +x);
+		
+		x*=y;
+		System.out.println("x*=y = " +x);
+		
+		x/=y;
+		System.out.println("x/=y = " +x);
+		
+		x%=y;
+		System.out.println("x%=y = " +x);
+		
+		x=5;
+		y=10;
+		
+		x*=5+y*10/2;
+		// x=x*5+y*10/2;      (x)
+		// x=x*(5+y*10/2);    (o)
+		System.out.println("x+=5+y*10/2 = " +x);
+
+		
+	}
+
+}
