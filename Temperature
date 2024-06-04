@@ -13,14 +13,14 @@ public class Temperature {
 	      {
 	         case "A" :
 	            System.out.println("攝氏轉換成華氏,請輸入溫度"); 
-	            int temperature_F = s.nextInt();
+	            float temperature_F = s.nextFloat();
 	            temperature_F = temperature_F*9/5+32;
 	            System.out.println("華氏溫度為"+temperature_F);
 	            
 	            break;
 	         case "B" :
 	            System.out.println("華氏轉換成攝氏,請輸入溫度");
-	            int temperature_C = s.nextInt();
+	            float temperature_C = s.nextFloat();
 	            temperature_C = (temperature_C-32)*5/9;
 	            System.out.println("攝氏溫度為"+temperature_C); 
 	            break;
