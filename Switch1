@@ -1,0 +1,25 @@
+public class Switch_case {
+		   public static void main(String args[]){
+		      char grade = 'B';
+		 
+		      switch(grade)
+		      {
+		         case 'A' :
+		            System.out.println("Grade A"); 
+		            break;
+		         case 'B' :
+		         case 'C' :
+		            System.out.println("Grade B or C");
+		            break;
+		         case 'D' :
+		            System.out.println("Grade D");
+		            break;
+		         case 'F' :
+		            System.out.println("Failure");
+		            break;
+		         default :
+		            System.out.println("未符合判斷");
+		      }
+		      System.out.println("你的成績是 " + grade);
+		   }
+		}
