@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Bmi2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		float hei,wei,bmi;
+		int age;
+		String name;	
+		Scanner s=new Scanner(System.in);
+
+        System.out.println("請輸入姓名？");
+        name = s.next();
+        System.out.println(name+"，請再輸入您的年紀(整數)");
+        age =s.nextInt(); 
+        System.out.println("請再輸入身高");
+        hei =s.nextFloat();
+        System.out.println("請輸入體重");
+        wei = s.nextFloat();
+    	bmi=(wei/(hei*hei)*10000);
+    	if(bmi >= 27){
+			System.out.println("啊～「肥胖」，需要立刻力行「健康體重管理」囉！");	
+		}
+		else if(bmi < 27 && bmi>=24){
+			System.out.println("「體重過重」了，要小心囉，趕快力行「健康體重管理」！");	
+		}
+		else if(bmi < 24 && bmi>=18.5){
+			System.out.println("恭喜！「健康體重」，要繼續保持！");	
+		}
+		else{
+			System.out.println("「體重過輕」，需要多運動，均衡飲食，以增加體能，維持健康！");
+		}
+			
+    	System.out.println("測式程式結束。");
+
+        s.close();    // 關閉Scanner物件
+
+	}
+
+}
