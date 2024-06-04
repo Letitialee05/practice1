@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Temperature {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner s=new Scanner(System.in);
+		
+        System.out.println("輸入選項A為攝氏轉換成華氏,輸入選項B為華氏轉換成攝氏");
+        String chose = s.next();
+        switch(chose)
+	      {
+	         case "A" :
+	            System.out.println("攝氏轉換成華氏,請輸入溫度"); 
+	            int temperature_F = s.nextInt();
+	            temperature_F = temperature_F*9/5+32;
+	            System.out.println("華氏溫度為"+temperature_F);
+	            
+	            break;
+	         case "B" :
+	            System.out.println("華氏轉換成攝氏,請輸入溫度");
+	            int temperature_C = s.nextInt();
+	            temperature_C = (temperature_C-32)*5/9;
+	            System.out.println("攝氏溫度為"+temperature_C); 
+	            break;
+	        
+	      }
+        
+       
+        
+      
+        s.close();    // 關閉Scanner物件
+
+	}
+
+}
