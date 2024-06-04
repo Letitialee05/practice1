@@ -1,0 +1,14 @@
+public class IfElse_Nested{
+	public static void main(String[] args){
+		int income = 1100000;
+	
+		if(income >= 500000){
+			if(income >= 1000000)
+				System.out.println("去澳洲看無尾熊");
+			else
+				System.out.println("去中國看熊貓");
+		}			
+		else
+			System.out.println("去公園看黃金獵犬");		
+	}
+}
