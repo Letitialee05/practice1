@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Method_temp_converter {
+
+	public static void main(String[] args) {
+		
+		Scanner s1=new Scanner(System.in);
+        System.out.println("請輸入要轉換的溫度值");
+        
+        double temp_value = s1.nextDouble();
+		temp_converter(temp_value);
+			
+		// TODO Auto-generated method stub
+		s1.close();	
+	}
+	
+	
+	static void temp_converter(double temp_val)
+	
+	{
+		
+		Scanner s=new Scanner(System.in);
+		
+		System.out.println("請輸入功能選項，輸入A為攝氏轉華氏，輸入B為華氏轉攝氏");
+        //System.out.println("請輸入功能選項，輸入1為攝氏轉華氏，輸入2為華氏轉攝氏");
+       
+         String sel = s.next();
+        //int select_fun = s.nextInt();
+        
+        if (sel.equals("A"))
+        //if (select_fun==1)	
+        {
+        	// System.out.println("請輸入攝氏溫度值");
+        	  //  double C = s.nextDouble();
+        	    double F= temp_val*9/5+32 ;
+        	    System.out.println("攝氏溫度"+temp_val+"度，轉成華氏溫度為"+F+"度"); 	    
+        }
+        else  if (sel.equals("B"))
+       // else if  (select_fun==2)	
+        {
+        	//System.out.println("請輸入華氏溫度值");
+        	//double F1 = s.nextDouble();
+    	    double C1= (temp_val-32)*5/9 ;
+    	    System.out.println("華氏溫度"+ temp_val+"度，轉成攝氏溫度為"+ C1+"度");	
+        }	
+	s.close();	
+		
+	
+		
+		
+	}
+
+}
