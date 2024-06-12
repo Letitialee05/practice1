@@ -1,0 +1,37 @@
+class C {
+	//int i; //不寫視為defaul(同package視為public,不同時視為private)
+	       //也可以用public或是protected(同package視為public,不同時可用繼承使用)
+
+	private int i; //存取等級使用最嚴謹private,只能在類別內使用
+
+	// if i value is private open below
+
+	 void change_i_value(int value)
+	 {
+	
+	 i=value;
+	 }
+	
+	 void show_i_value()
+	 {
+	
+	 System.out.println("i_value = "+i);
+	 }
+}
+
+public class D {
+	public static void main(String[] args) {
+		C c1 = new C();
+
+//		c1.i = 10;
+//		System.out.println("c1.i = " + c1.i);
+//		c1.i = 20;
+//		System.out.println("c1.i = " + c1.i);
+
+		// if i value is private open below
+
+		 c1.change_i_value(10);
+		 c1.show_i_value();
+		//
+	}
+}
