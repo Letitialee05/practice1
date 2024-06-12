@@ -1,0 +1,47 @@
+package ex06;
+
+public class Static1
+{
+
+	static void sub(int x, int y) { // 被呼叫方法主體
+		System.out.print("呼叫Static1類別的sub方法-->");
+		System.out.println(x + " - " + y + " = " + (x - y));
+	}
+
+	
+	public static void main(String[] args) {
+		int a = 25;
+		// 呼叫同一類別的sub方法
+		
+		//在同類別內的方法sub如果在方法定義前有加static ,那就可以直接使用方法名稱直接呼叫，不用建構出物件 
+		sub(a - 5, 3); // 呼叫敘述
+		
+		
+		// 呼叫不同類別的sub方法
+		//Static2 類別內的方法如果是(有)加 static 那就可以直接使用類別名稱.sub去呼叫方法
+		Static2.sub(a + 3, 5); // 呼叫敘述
+		
+		
+		
+		
+		
+		
+		//Static2 類別內的sub方法如果是(沒有)加 static 那就必需建構出物件才能去呼叫方法
+		Static3 c2 = new Static3(); // 建立屬於Static3類別的物件c2
+		c2.sub(a + 3, 5); // 呼叫物件c2的sub方法
+		//Static3 類別內的sub方法如果是(沒有加 static)那就必需建構出物件才能去呼叫方法
+		
+	}
+	
+	
+	
+}
+
+
+
+class Static3 {
+	  void sub(int x, int y) { // 被呼叫方法主體
+		System.out.print("呼叫Static3類別的sub方法-->");
+		System.out.println(x + " - " + y + " = " + (x - y));
+	}
+}
