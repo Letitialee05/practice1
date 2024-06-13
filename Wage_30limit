@@ -45,12 +45,12 @@ public class Wage {
 		String num,sn,dep;
 		int sbp,spl;
 		
-		Wage_s[] staff = new Wage_s[30];
+		Wage_s[] staff = new Wage_s[30]; //如果要限制最多只30位員工
 		
 		Scanner s=new Scanner(System.in);
 		System.out.println("請輸入幾位員工");
 	    int number_1 = s.nextInt();
-//		Wage_s[] staff = new Wage_s[number_1];
+//		Wage_s[] staff = new Wage_s[number_1];  //可自由輸入員工數量
 //	    for(int i=0;i<staff.length;i++) {
 	    
 		for(int i=0;i<number_1;i++) {
@@ -65,7 +65,7 @@ public class Wage {
 			System.out.println("請輸入職務加給");
 			spl=s.nextInt();
 			
-			staff [i]=new Wage_s(num,sn,dep,sbp,spl);
+			staff [i]=new Wage_s(num,sn,dep,sbp,spl); //請注意這裡常常漏寫,這是要把陣列值輸回物件內
 			
 		}
 //		for(int i=0;i<staff.length;i++) {
