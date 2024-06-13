@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+class Wage_s{
+	String number,name,department;
+	int basic_pay,plus,total,getpaid;
+	double withhhold;
+	
+	Wage_s(){
+		
+	}
+	
+	Wage_s(String num,String sn,String dep,int sbp,int spl){
+		number = num;
+		name = sn;
+		department = dep;
+		basic_pay = sbp;
+		plus = spl;
+		
+		total = basic_pay*plus;
+		withhhold = total*0.1;
+		getpaid = total-(int)withhhold;
+		
+	}
+	
+	
+	void show_Pet_1(){
+			
+		System.out.println("員工代號: "+number+" 員工姓名: "+name+" 服務部門: "+department+" 薪資總額: "+total+" 扣繳稅額: "+withhhold+" 應領薪資: "+getpaid);
+//		System.out.println("員工姓名: "+name);
+//		System.out.println("服務部門: "+department);	
+//		System.out.println("薪資總額: "+total);
+//		System.out.println("扣繳稅額: "+withhhold);	
+//		System.out.println("應領薪資: "+grtpaid);
+
+	}
+	
+}
+
+
+public class Wage {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String num,sn,dep;
+		int sbp,spl;
+		
+		Wage_s[] staff = new Wage_s[30];
+		
+		Scanner s=new Scanner(System.in);
+		System.out.println("請輸入幾位員工");
+	    int number_1 = s.nextInt();
+//		Wage_s[] staff = new Wage_s[number_1];
+//	    for(int i=0;i<staff.length;i++) {
+	    
+		for(int i=0;i<number_1;i++) {
+			System.out.println("請輸入員工代號");
+			num = s.next();
+			System.out.println("請輸入員工姓名");
+			sn = s.next();
+			System.out.println("請輸入服務部門");
+			dep = s.next();
+			System.out.println("請輸入底薪");
+			sbp=s.nextInt();
+			System.out.println("請輸入職務加給");
+			spl=s.nextInt();
+			
+			staff [i]=new Wage_s(num,sn,dep,sbp,spl);
+			
+		}
+//		for(int i=0;i<staff.length;i++) {
+		
+		for (int i=0;i<number_1;i++){	
+			
+			staff [i].show_Pet_1();		
+	    }
+  s.close();
+		
+}
+}
