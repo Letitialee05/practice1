@@ -6,8 +6,9 @@ class Cavg {
     }
 
     public double getAvg(int[] vArray) {
-        int n = vArray[0];
-        for(int i=1; i<vArray.length; i++){
+        int n = vArray[0]; //這個n初始值是陣列[0]
+        
+        for(int i=1; i<vArray.length; i++){ //因為是第一個數字與地案個數字做比較,所以從陣列[1]開始
             n += vArray[i];
         }
         double avg = (double)n/vArray.length;
