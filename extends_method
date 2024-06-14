@@ -1,0 +1,39 @@
+class  P_class{
+	
+	String name;
+	
+//	P_class(String name)  //當父類別沒寫建構子
+//	{
+//	
+//		this.name=name;
+//			
+//	}
+
+}
+
+class S_class extends P_class{
+	
+	S_class(String name)
+	{
+		//super(name);	 //如果父類別已經寫此建構子,就需要用super來呼叫
+		this.name=name;  //就可以用一般方式呼叫方法
+	}
+	
+	
+}
+
+
+
+
+public class Inh_class {
+
+	public static void main(String[] args) {
+		
+		S_class s1 = new S_class("apple");
+		
+		System.out.println("The s1.name is "+s1.name);
+		// TODO Auto-generated method stub
+
+	}
+
+}
