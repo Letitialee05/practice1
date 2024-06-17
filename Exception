@@ -1,0 +1,30 @@
+public class CallStackDemo {
+	static void method1() {
+		method2();
+	}
+
+	static void method2() {
+		int i;
+		i = 4 / 0;
+	}
+
+	public static void main(String[] args) {
+		try {                              //去監視method1,只能一個try,但可以有很多個catch
+			method1();
+		} catch (ArithmeticException e) {  //去抓問題在哪裡,建構ArithmeticException物件 e(這個變數名稱可以自己設)
+			System.out.println("Devide by 0!  Please try again!");
+			e.printStackTrace(); //這個必須寫,拿來把錯誤的地方顯示出來問題在哪裡
+		}
+
+		System.out.println("apple");//如果可以跑出這個就表示前面遇到的問題,解決了能繼續跑到這裡
+	}
+}
+
+
+***跑出來的狀況***
+Devide by 0!  Please try again!
+java.lang.ArithmeticException: / by zero
+apple
+	at CallStackDemo.method2(CallStackDemo.java:8)
+	at CallStackDemo.method1(CallStackDemo.java:3)
+	at CallStackDemo.main(CallStackDemo.java:13)
