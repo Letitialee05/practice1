@@ -44,4 +44,5 @@ public class DefineExceptionClass { // 主程式
       }
       System.out.println("程式結束!");
    }
+  System.out.println("增加薪資為:"+Robert.Salary);
 }
