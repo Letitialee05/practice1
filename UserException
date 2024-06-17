@@ -1,0 +1,47 @@
+// 自訂Exception類別, 繼承Exception類別
+class UserException extends Exception { // 變數宣告
+   int data;
+
+   public UserException() {       //標準方式建立自訂Exception,為一個空白建構子+一個帶字串建構子
+	   
+   }
+   
+   public UserException(String s) {  //帶字串建構子是為了之後使用getMassage(此為使用字串方式)
+	   
+	   super(s);
+   }
+ 
+   
+//   // 建構子
+//   public UserException(int data) { //此方法是使用數值再回傳數值
+//      this.data = data;
+//   }
+//
+//   // 覆寫getMessaeg()方法
+//   public String getMessage() {  //不使用getMassage,使用此方式標印出錯誤
+//      return ("錯誤! 出價太多次: " + data);
+}
+
+  
+// 主程式類別
+public class DefineExceptionClass { // 主程式
+   public static void main(String[] args) {
+      try {
+         int i;
+         for (i = 0; i < 5; i++) {
+            if (i == 3) // 丟出自訂的例外
+               throw new UserException("數值不能為3");
+            System.out.println("出價次數: " + i);
+         }
+      } catch (UserException e) { // 處理自訂的例外
+         System.out.println("例外說明: " + e.getMessage()); // getMessage(只可以放String)
+         System.out.print("例外原因: ");
+         e.printStackTrace();
+         return; //return表示程式在這裡結束,finally一定會show出來,但後面的System.out.println("程式結束!");就不會出現
+         
+      } finally {
+         System.out.println("錯誤處理結束!");
+      }
+      System.out.println("程式結束!");
+   }
+}
