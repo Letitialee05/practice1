@@ -3,9 +3,9 @@ abstract class Person2   	// Person類別宣告
    public String name;   	// 姓名
    public int age;       		// 年齡  
    // 抽象方法: 計算總分或總價
-   public abstract void total();
+   public abstract void total(); //abstract寫法
    
-   public abstract void avg();
+   public abstract void avg(); //abstract寫法
    
    public void area()
    {
