@@ -1,0 +1,27 @@
+import java.awt.event.*;  
+import javax.swing.*;    
+public class ButtonExample2 {  
+	
+public static void main(String[] args) { 
+	
+    JFrame f=new JFrame("Button Example");  
+    final JTextField tf=new JTextField(); 
+    
+    tf.setBounds(50,50, 150,20);  
+    JButton b=new JButton("Click Here");  
+    b.setBounds(50,100,95,30);  
+    
+    b.addActionListener(new ActionListener(){    //此功能為監聽方塊,ActionListener這是介面,正常來說不能new建構物件,可想成new A implement ActionListener()
+    	                                         //,故這裡用到匿名類別(建構一個A物件,只為了在此功能內一次性使用,用完就消失不占空間)
+    	public void actionPerformed(ActionEvent e){  
+    		tf.setText("Welcome to Javatpoint.");   //可在""內更改為任意文字,這個功能在畫面輸入文字方塊裡面按下會顯現的文字
+        }  
+    });
+    
+    f.add(b);f.add(tf);  //add方法就是在畫面內加上元件
+    f.setSize(400,400);  //這是畫面尺寸
+    f.setLayout(null);  
+    f.setVisible(true);   
+	}  
+
+}  
