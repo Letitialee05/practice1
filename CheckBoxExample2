@@ -48,7 +48,7 @@ public class CheckBoxExample2 extends JFrame implements ActionListener{
             amount+=10;  
             msg+="Tea: 10\n";  
         }  
-        msg+="-----------------\n";  
+        msg+="-----------------\n";  //產生分隔線
         JOptionPane.showMessageDialog(this,msg+"Total: "+amount);  //showMessageDialog秀出對話視窗
     }  
     
