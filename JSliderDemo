@@ -1,0 +1,68 @@
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
+
+public class JSliderDemo extends JPanel implements ChangeListener {
+    private JTextField field;
+
+    public JSliderDemo() {
+        initializeUI();
+    }
+
+    private void initializeUI() {
+        setLayout(new BorderLayout());
+        setPreferredSize(new Dimension(500, 200));
+
+        // Creates an instance of JSlider with a horizontal
+        // orientation. Define 0 as the minimal value and
+        // 50 as the maximum value. The initial value is set
+        // to 10.
+        JSlider slider = new JSlider(JSlider.HORIZONTAL, 0, 50, 10);
+
+        slider.setPaintTicks(true);
+        slider.setPaintLabels(true);
+        slider.setMinorTickSpacing(1);
+        slider.setMajorTickSpacing(10);
+
+        slider.addChangeListener(this); //監聽選擇
+
+        JLabel label = new JLabel("Selected Value:"); //文字標籤
+        field = new JTextField(5);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout());//FlowLayout表示依序排列,就可以不用輸入座標
+        panel.add(label);
+        panel.add(field);
+
+        add(slider, BorderLayout.NORTH);
+        add(panel, BorderLayout.SOUTH);
+    }
+
+    public void stateChanged(ChangeEvent e) { //stateChanged介面的抽象方法建構 
+        JSlider slider = (JSlider) e.getSource(); //getSource取得來源,再轉換成(JSlider)類別
+
+        // Get the selection value of JSlider
+        field.setText(String.valueOf(slider.getValue()));//getValue先抓值,再用String.valueOf變成文字(才可以放進輸入文字方塊)
+    }
+
+    public static void showFrame() {
+        JPanel panel = new JSliderDemo();
+        panel.setOpaque(true);
+
+        JFrame frame = new JFrame(); //frame畫面內資訊設定
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setTitle("JSlider Demo");
+        frame.setContentPane(panel);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() { //在panel看到run表示,表示有多執行序
+                JSliderDemo.showFrame();
+            }
+        });
+    }
+}
