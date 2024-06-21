@@ -1,0 +1,28 @@
+import java.awt.*;    
+import javax.swing.*;    
+    
+public class BoxLayoutExample1 extends JFrame {    
+ Button buttons[];    
+    
+ public BoxLayoutExample1 () { 
+   
+   buttons = new Button [5];    //指示設定了矩陣大小
+      
+   for (int i = 0;i<5;i++) {    
+      buttons[i] = new Button ("Button " + (i + 1));    //在這裡才建構了矩陣
+      // adding the buttons so that it can be displayed  
+      add (buttons[i]);    
+    }    
+  // the buttons will be placed horizontally  
+	//setLayout (new BoxLayout (this, BoxLayout.Y_AXIS)); //排立方是從Y軸
+	setLayout (new BoxLayout (getContentPane(), BoxLayout.Y_AXIS)); //繼承JFrame才有getContentPane功能,因為BoxLayout不是和直接放在畫面上(會關不掉)
+	                                                                //需要先放在ContentPane上才可以關閉視窗
+	setSize(400,400);    
+	setVisible(true);  
+	
+}    
+  // main method  
+public static void main(String args[]){    
+	BoxLayoutExample1 b=new BoxLayoutExample1();    
+}    
+}    
