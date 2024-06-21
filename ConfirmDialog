@@ -1,0 +1,36 @@
+import javax.swing.JOptionPane;
+
+public class ConfirmDialog1 {
+
+	public static void main(String[] args) {
+		
+		
+// method 1
+		Object[] options = { "Yes, please", "No way!" }; //按鈕的文字矩陣
+		int n = JOptionPane.showOptionDialog(null, "Would you like green eggs and ham?", "A Silly Question",
+				JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, // JOptionPane.QUESTION_MESSAGE是指圖片樣子, 此null是指不制定圖片(如果要就要自己放路徑)
+				options, // the titles of buttons(按鈕上的文字)
+				options[0]); // default button title(按鈕上選擇的初始值,在矩陣[0]的位置)
+		System.out.println(n);
+
+//// method 2		
+//		
+//		int input = JOptionPane.showConfirmDialog(null, "Would you like green eggs and ham?", "An Inane Question",
+//					JOptionPane.YES_NO_OPTION);
+//		            //JOptionPane.showConfirmDialog(加入在哪個視窗,因為前面都沒有繼承或是建構視窗所以在這裡使用null,對話視窗的問題,對話視窗左上角的標題
+//		            //使用的按鍵模式)
+//			System.out.println(input); //印出選擇
+		
+		
+		
+		// showConfirmDialog
+//		int input = JOptionPane.showConfirmDialog(null, "要吃午餐嗎?");
+//		// JOptionPane.sh
+//		// 0=yes, 1=no, 2=cancel
+//		System.out.println(input);
+
+		
+
+	}  
+    
+}
