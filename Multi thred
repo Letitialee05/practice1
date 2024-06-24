@@ -1,0 +1,23 @@
+package thread;
+
+class Multi3 implements Runnable { //沒有繼承Thread,所以需要先建構run,才能跑程式
+	public void run() {
+		System.out.println("thread is running...");
+	}
+
+	public static void main(String args[]) {
+		Multi3 m1 = new Multi3(); //建構物件
+		Multi3 m2 = new Multi3();
+		
+		Thread t1 = new Thread(m1,"garbage"); // Using the constructor Thread(Runnable r)
+		t1.start();//因為已經宣告為Thread,故可以使用start
+		String str1 = t1.getName();
+		System.out.println(str1);
+
+		Thread t2 = new Thread(m2,"drink"); 
+		t2.start();
+		t2.setName("apple");//更改名稱,如果放在println後面,那就會先印出原本的,除非放這個碼後再列印,才會出現第二次命名的apple
+		String str2 = t2.getName();
+		System.out.println(str2);
+	}
+}
