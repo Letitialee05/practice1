@@ -22,7 +22,7 @@ public class Anonymous_innerclass {
 		 * book.show();
 		 */
 
-		Book book = new Book() { // 使用匿名類別,等同於Book book = new xxxxx implement Book()
+		Book book = new Book() { // 使用匿名類別,等同於Book book = new xxxxx implement Book(),介面是可以宣告但不能建構的
 			public void show() {
 				System.out.println("匿名內部類別example");
 
