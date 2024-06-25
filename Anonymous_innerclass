@@ -1,0 +1,36 @@
+interface Book {
+	void show();
+
+}
+
+public class Anonymous_innerclass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		/*原本要寫這麼多才能達成,但使用匿名類別就可以達成
+		 * class test implement Book{
+		 * 
+		 * public void show() { System.out.println("匿名內部類別example");
+		 * 
+		 * }
+		 * 
+		 * }
+		 * 
+		 * Book book = new test();
+		 * 
+		 * book.show();
+		 */
+
+		Book book = new Book() { // 使用匿名類別,等同於Book book = new xxxxx implement Book()
+			public void show() {
+				System.out.println("匿名內部類別example");
+
+			}
+		};
+
+		book.show();
+
+	}
+
+}
