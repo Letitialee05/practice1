@@ -1,0 +1,35 @@
+import java.util.*;
+
+class Student10 {
+	int rollno;
+	String name;
+	int age;
+
+	Student10(int rollno, String name, int age) {
+		this.rollno = rollno;
+		this.name = name;
+		this.age = age;
+	}
+}
+
+class ArrayList5 {
+
+	public static void main(String args[]) {
+		// Creating user-defined class objects
+		Student10 s1 = new Student10(101, "Sonoo", 23);
+		Student10 s2 = new Student10(102, "Ravi", 21);
+		Student10 s3 = new Student10(103, "Hanumat", 25);
+		// creating arraylist
+		ArrayList<Student10> al = new ArrayList<Student10>();
+		al.add(s1);// adding Student10 class object
+		al.add(s2);
+		al.add(s3);
+		// Getting Iterator
+		Iterator itr = al.iterator();
+		// traversing elements of ArrayList object
+		while (itr.hasNext()) {
+			Student10 st = (Student10) itr.next(); //強制轉型為Student10型態才可以把Iterator的itr放入Student10型態的 st 
+			System.out.println(st.rollno + " " + st.name + " " + st.age);
+		}
+	}
+}
