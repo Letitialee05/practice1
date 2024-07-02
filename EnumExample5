@@ -1,0 +1,24 @@
+package Enum;
+
+class EnumExample5 {
+	enum Day {
+		SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+	} //限制了只放這七種
+
+	public static void main(String args[]) {
+		Day day = Day.MONDAY; //用Day建構day,塞入Day.MONDAY值
+
+		switch (day) {
+		case SUNDAY:
+			System.out.println("sunday");
+			break;
+			
+		case MONDAY:
+			System.out.println("monday");
+			break;
+			
+		default:
+			System.out.println("other day");
+		}
+	}
+}
