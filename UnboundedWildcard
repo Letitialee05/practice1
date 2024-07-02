@@ -1,0 +1,27 @@
+import java.util.Arrays;  
+import java.util.List;  
+  
+public class UnboundedWildcard {  
+  
+    public static void display(List<?> list)  //<?>不限制型態,與以前不限制型態的差別在,這裡寫一次就包容各種型態,以前是每種型態都要寫一次方法
+    {  
+          
+        for(Object o:list)  //Object是很大的包容度,所以不管放甚麼都可接納
+        {  
+            System.out.println(o);  
+        }  
+          
+    }  
+      
+      
+    public static void main(String[] args) {  
+          
+    List<Integer> l1=Arrays.asList(1,2,3);  
+    System.out.println("displaying the Integer values");  
+    display(l1);  
+    List<String> l2=Arrays.asList("One","Two","Three");  
+      System.out.println("displaying the String values");  
+        display(l2);  
+    }  
+  
+}  
